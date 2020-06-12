@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>メニュー一覧</title>
+
+  <style>
+    table {
+      border: 1px solid gray;
+    }
+
+    table th, table td {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+  <h2 >メニュー一覧</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>名前</th>
+      <th>種別</th>
+      <th>値段</th>
+      <th>中身(レシピ)</th>
+      <th>更新</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="menu : ${menus}" th:object="${menu}">
+      <td th:text="*{id}"></td>
+      <td th:text="*{name}"></td>
+      <td th:text="*{type}"></td>
+      <td th:text="*{price}"></td>
+      <td>中身</td>
+       <td>
+        <a th:href="@{'/menus/update/' + *{id}}">更新</a>
+      </td>
+   </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

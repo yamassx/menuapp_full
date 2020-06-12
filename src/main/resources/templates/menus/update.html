@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>メニュー更新</title>
+</head>
+
+<body>
+<div layout:fragment="content">
+
+  <h2>メニュー更新</h2>
+
+  <form th:action="@{'/menus/update/' + *{menu_id}}" method="post" th:object="${menuForm}">
+    <span>ID</span>:<span th:text="*{menu_id}">123</span><br/>
+    <span>名前</span>: <input type="text" name="name" th:value="*{name}"> <br/>
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="err"></div>
+    <span>種別</span>: <input type="text" name="type" th:value="*{type}"> <br/>
+    <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}" th:errorclass="err"></div>
+    <span>値段</span>: <input type="text" name="price" th:value="*{price}">
+    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" th:errorclass="err"></div>
+    <button type="submit">更新</button>
+  </form>
+
+</div>
+</body>
+</html>
