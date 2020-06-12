@@ -91,7 +91,7 @@ public class RecipeController {
 			model.addAttribute("recipes", recipes);
 			
 		}
-		return "/recipes/search.html";		
+		return "recipes/search.html";		
 		
 	}
 }
