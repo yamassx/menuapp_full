@@ -87,7 +87,7 @@ public class RecipeController {
 			model.addAttribute("searchForm", new SearchForm());
 			
 		}else{
-			List<Recipe> recipes = recipeservice.search(searchForm.getMincal(), searchForm.getMaxcal());
+			List<Recipe> recipes = recipeservice.search(searchForm.getMincal(), searchForm.getMaxcal(), searchForm.getName());
 			model.addAttribute("recipes", recipes);
 			
 		}

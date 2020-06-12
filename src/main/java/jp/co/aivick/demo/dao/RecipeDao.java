@@ -24,6 +24,6 @@ public interface RecipeDao {
     int update(Recipe recipe);
     
     @Select
-    List<Recipe> search(Double mincal, Double maxcal);
+    List<Recipe> search(Double mincal, Double maxcal, String name);
 
 }

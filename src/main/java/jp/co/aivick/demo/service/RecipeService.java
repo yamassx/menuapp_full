@@ -35,8 +35,8 @@ public class RecipeService {
 	    }
 	    
 	    @Transactional
-	    public List<Recipe> search(Double mincal, Double maxcal){
-	    	return recipeDao.search(mincal, maxcal);
+	    public List<Recipe> search(Double mincal, Double maxcal, String name){
+	    	return recipeDao.search(mincal, maxcal,name);
 	    	
 	    }
 	    
