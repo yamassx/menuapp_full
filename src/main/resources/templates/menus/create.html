@@ -24,10 +24,10 @@
     <span>種別</span>: <input type="text" name="type" th:value="*{type}"><br/>
 	<span>価格</span>: <input type="text" name="price" th:value="*{price}"><br/>
 	<span>レシピ</span>:
-		<p th:each="recipe , stat: ${recipes}" th:object="${recipe}">
-			<input type="checkbox" th:name="|recipes[${stat.index}]|" th:value="*{id}">  
-      <a th:text="*{name}"></a>
-      </p><br/>
+		
+	<p th:each="recipe : ${recipes}" th:object="${recipe}">
+			<input type="checkbox" name="recipes" th:value="*{id}">  
+      <a th:text="*{name}"></a></p>
 	
     <button type="submit">登録</button>
   </form>
