@@ -1,10 +1,10 @@
 select
     /*%expand*/*
-from recipes
+from recipe
 where
 /*%if name != null*/
 	recipe_name
-    Like /* "%" + name "%" + */'a'
+    Like /* "%" + name + "%" */'a'
 /*%end*/
 /*%if mincal != null*/
 	AND
